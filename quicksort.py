@@ -1,3 +1,17 @@
+'''
+Algorithm:
+    1. Right most elmeent is the pivot 
+    2. Create a 'wall' at the front of the list
+        - to the left are elements < pivot, to the right are elements > pivot 
+        - the wall is not an index, it is a location b/n indices. Hence, keep a 'rightOfWall' index rather than an index
+    3. Iterate over all elements, except the final element which because that is the pivot
+        - if larger, continue
+        - if smaller, place to the right of the wall and shift the all one step to the right 
+    4. Place the pivot to the right of the wall by swapping it with the element to the right of the wall
+    5. Recurse
+
+Running Time: O(n^2) worst case, best case O(nlogn)
+'''
 def swap(index1, index2, arr):
     arr[index1], arr[index2] = arr[index2], arr[index1]
     return arr
