@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../dataStructures')
+sys.path.append('../dataStructures/graphs')
 from graph import *
 
 def notEmpty(myList):
@@ -10,11 +10,12 @@ def notEmpty(myList):
 
 def dijkstra(G, start, end):
     visited = []
+    bigNumber = 10000000
     unvisited = G.getListVertexNames()
     G.getListVertexNames()
     distances = {}
     for vertex in unvisited:
-        distances[vertex] = 100000
+        distances[vertex] = bigNumber 
     distances[start] = 0 
     visited.append(start)
     unvisited.remove(start)
